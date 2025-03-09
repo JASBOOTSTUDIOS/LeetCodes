@@ -1,22 +1,25 @@
 function longestCommonPrefix(strs: string[]): string {
     let logPrefix = new Map<number, string>();
-    let maxim:number = 1;
+    let maxim:number = 0;
     let index = 0;
 
-    for(const str of strs){
+    for(let a = 0 ; a < strs.length; a++){
         if(!maxim){
-            maxim = str.length;
-        }else if(maxim < str.length){
-            maxim = str.length;
+            maxim = strs[a].length;
+            index = a;
+        }else if(maxim < strs[a].length){
+            maxim = strs[a].length;
+            index = a;
         }
-        index++;
     };
+
+
     
     return "";
 };
 
 
-console.info(longestCommonPrefix(["flower","flow","flight"]));
+console.info(longestCommonPrefix(["flower","flowssss","flight","qsad","ertyuiopoiuytre"]));
 // console.info(longestCommonPrefix(["dog","racecar","car"]));
 // console.info(longestCommonPrefix(["flow","cuboy","nino"]));
 // console.info(longestCommonPrefix(["flow","cuboy","nino","santiago"]));
